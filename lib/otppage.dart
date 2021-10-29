@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:home_service_app/locationpage.dart';
+import 'package:home_service_app/login.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
 
@@ -18,7 +19,11 @@ class _OtppageState extends State<Otppage> {
     return  Scaffold(
     appBar: AppBar(backgroundColor: Colors.white,
     elevation: 0,
-    leading: Icon(Icons.arrow_back,color: Colors.black,),),
+    leading: InkWell(onTap: () => Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => Loginpage()),
+),
+child: Icon(Icons.arrow_back,color: Colors.black,)),),
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body:Column(

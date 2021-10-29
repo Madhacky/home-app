@@ -71,7 +71,10 @@ class _SignuppageState extends State<Signuppage> {
 ),
         ),
         SizedBox(height: MediaQuery.of(context).size.height*0.02,),
-         Mybutton(textcolor: Colors.white,background: Colors.black,buttontext: 'SIGN UP',
+         Mybutton(textcolor: Colors.white,background: Colors.black,buttontext: 'SIGN UP', ontap: () => Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => Loginpage()),
+),
 ),
           SizedBox(height: MediaQuery.of(context).size.height*0.01,),
           const Text('VIEW OTHER OPTION'),

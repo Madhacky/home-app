@@ -18,7 +18,11 @@ class _LoginpageState extends State<Loginpage> {
     return  Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(elevation: 0,
-      leading: Icon(Icons.arrow_back,color: Colors.black,),
+      leading: InkWell(onTap: () => Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => Signuppage()),
+),
+child: Icon(Icons.arrow_back,color: Colors.black,)),
       backgroundColor: Colors.white,
       ),
       

@@ -23,10 +23,6 @@ class _LocationpageState extends State<Locationpage> {
             alignment: Alignment.topCenter,
             child: Column(
               children: [
-                // const Text('Hey, nice to meet you!',style: TextStyle(color: Colors.black54,fontSize: 14),),
-                // const Padding(padding: EdgeInsets.all(10)),
-                // const Text('See services around',style: TextStyle(fontSize: 26,color: Colors.black,fontWeight: FontWeight.normal,letterSpacing: 1.5),),
-                // const Padding(padding: EdgeInsets.all(15)),
                 Padding(
                   padding: const EdgeInsets.all(30.0),
                   child: Image.asset('assets/images/locationn.png'),
