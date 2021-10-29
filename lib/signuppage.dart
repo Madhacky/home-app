@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_service_app/components/button.dart';
+import 'package:home_service_app/login.dart';
+import 'package:home_service_app/otppage.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 class Signuppage extends StatefulWidget {
   const Signuppage({ Key? key }) : super(key: key);
@@ -11,6 +13,8 @@ class _SignuppageState extends State<Signuppage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       backgroundColor: Colors.white,
+      
       resizeToAvoidBottomInset: false,
       
       body: Column(
@@ -67,15 +71,21 @@ class _SignuppageState extends State<Signuppage> {
 ),
         ),
         SizedBox(height: MediaQuery.of(context).size.height*0.02,),
-        const Mybutton(textcolor: Colors.white,background: Colors.black,buttontext: 'SIGN UP',),
+         Mybutton(textcolor: Colors.white,background: Colors.black,buttontext: 'SIGN UP',
+),
           SizedBox(height: MediaQuery.of(context).size.height*0.01,),
           const Text('VIEW OTHER OPTION'),
           SizedBox(height: MediaQuery.of(context).size.height*0.03,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children:  [
               Text('ALREADY HAVE AN ACCOUNT? '),
-              Text('LOG IN',style: TextStyle(color: Colors.blue),)
+              InkWell(
+                onTap: () => Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => Loginpage()),
+),
+                child: Text('LOG IN',style: TextStyle(color: Colors.blue),))
             ],
           )
           ],

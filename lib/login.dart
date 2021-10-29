@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:home_service_app/otppage.dart';
+import 'package:home_service_app/signuppage.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 import 'components/button.dart';
@@ -14,6 +16,11 @@ class _LoginpageState extends State<Loginpage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(elevation: 0,
+      leading: Icon(Icons.arrow_back,color: Colors.black,),
+      backgroundColor: Colors.white,
+      ),
       
       body: Container(
         
@@ -21,7 +28,7 @@ class _LoginpageState extends State<Loginpage> {
         child: Column(
           
           children:  <Widget>[
-            const SizedBox(height: 165,),
+            const SizedBox(height: 80,),
             const Text('Welcome back!',style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),),
             const SizedBox(height: 70,),
             const Mybutton(textcolor: Colors.white, buttontext: 'CONTINUE WITH FACEBOOK',background: Color(0xFF7583CA),),
@@ -47,11 +54,28 @@ class _LoginpageState extends State<Loginpage> {
 ),
         ),
            const SizedBox(height: 20,),
-           const Mybutton(textcolor: Colors.white, buttontext: 'LOG IN', background: Colors.black),
+            Mybutton(textcolor: Colors.white, buttontext: 'LOG IN', background: Colors.black,
+                ontap : (){
+                    Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => Otppage()),
+);
+                }
+            ),
            const Padding(padding: EdgeInsets.all(10)),
            const Text('Forgot Password?',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
            const Padding(padding: EdgeInsets.all(20)), 
-           const Text('DONT HAVE AN ACCOUNT? SIGN UP',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
+           Row( mainAxisAlignment: MainAxisAlignment.center,
+             children:  [
+                Text('DONT HAVE AN ACCOUNT? ',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
+                InkWell(
+                   onTap: () { Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => Signuppage()),
+);},
+                  child: Text('SIGN UP ',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
+             ],
+           ),
            const Padding(padding: EdgeInsets.all(20)),  
                   
           ],

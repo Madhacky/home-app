@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:home_service_app/locationpage.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
 
@@ -15,12 +16,15 @@ class _OtppageState extends State<Otppage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+    appBar: AppBar(backgroundColor: Colors.white,
+    elevation: 0,
+    leading: Icon(Icons.arrow_back,color: Colors.black,),),
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body:Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          const SizedBox(height: 90,),
+          const SizedBox(height: 30,),
           Container(
             
             alignment: Alignment.topCenter,
@@ -52,14 +56,17 @@ class _OtppageState extends State<Otppage> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text('OTP not recived? ',style: TextStyle(color: Colors.black54),),
-                    const Text('RESEND OTP',style: TextStyle(color: Colors.black54),),
+                  children: const [
+                    Text('OTP not recived? ',style: TextStyle(color: Colors.black54),),
+                    Text('RESEND OTP',style: TextStyle(color: Colors.black54),),
                   ],
                 ),
 
                 const Padding(padding: EdgeInsets.all(20)),
-                const Mybutton(textcolor: Colors.white, buttontext: 'VERIFY & PROCEED', background: Colors.black)
+                 Mybutton(textcolor: Colors.white, buttontext: 'VERIFY & PROCEED', background: Colors.black,ontap: () => Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => Locationpage()),
+),)
               ],
             ),
             
